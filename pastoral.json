@@ -1,0 +1,12 @@
+{
+    "sights": ["cow", "cat", "dog", "tree", "field", "horse", "cabin", "farmhouse", "barn", "tractor", "hand", "cloud",
+        "rabbit", "truck", "creek", "river", "beaver dam", "beaver", "stick", "twig", "bird", "nest", "shovel", "rake",
+        "rope", "ladder", "bale", "windmill"],
+    "sounds": ["mewling", "snapping", "clapping", "clip-clopping", "whispering", "rumbling", "bubbling", "whirring",
+        "lilting", "barking", "flapping", "crunching", "creaking", "cracking", "clickety-clacking"],
+    "prepositions": ["over", "under", "into", "for", "toward"],
+    "intransitive": ["stop", "halt", "weep", "breathe", "reel"],
+    "transitive": ["move", "show", "ruin", "make", "throw", "pull", "quell", "wake", "eek", "rake", "take", "unveil",
+        "illumine", "order", "pipe", "answer", "delve", "forget", "gurgle", "harrow", "kick", "light", "coronate"],
+    "imperative": ["fight", "seek", "strive", "thirst", "hunger", "bite", "scream", "quake", "will", "rage"]
+}
