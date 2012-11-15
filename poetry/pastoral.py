@@ -7,9 +7,9 @@ __email__ = 'dalan.hurst@gmail.com'
 __copyright__ = "Copyright 2012"
 __license__ = "BSD"
 
+import json
 import random
 import re
-from wordhoard import Wordhoard
 
 def randbool(): return random.randint(0, 1) == 0
 
@@ -18,7 +18,7 @@ def uppercase_first(str): return str[0].upper() + str[1:]
 
 
 class Pastoral:
-    def __init__(self, wordhoard: Wordhoard):
+    def __init__(self, wordhoard: dict):
         self.wordhoard = wordhoard
 
     def pluralize(self, noun):
@@ -38,23 +38,23 @@ class Pastoral:
             if randbool() else self.pluralize(random.choice(nouns)) + " " + self.make_prepositional_phrase()
 
     def make_prepositional_phrase(self):
-        return random.choice(self.wordhoard.prepositions) + " " + self.articulate(random.choice(self.wordhoard.sights))
+        return random.choice(self.wordhoard['prepositions']) + " " + self.articulate(random.choice(self.wordhoard['sights']))
 
     def choose_verb(self, verbs, is_singular):
         return random.choice(verbs) + "s" if is_singular else random.choice(verbs)
 
-    def you(self): return "You " + random.choice(self.wordhoard.intransitive)
+    def you(self): return "You " + random.choice(self.wordhoard['intransitive'])
 
     def subject_verb_object(self, a, b):
         is_singular = randbool()
         return " ".join([
-            self.choose_subject(self.wordhoard.__getattr__(a), is_singular),
-            self.choose_verb(self.wordhoard.transitive, is_singular),
-            self.choose_object(self.wordhoard.__getattr__(b))])
+            self.choose_subject(self.wordhoard[a], is_singular),
+            self.choose_verb(self.wordhoard['transitive'], is_singular),
+            self.choose_object(self.wordhoard[b])])
 
     def interlude(self):
-        random.shuffle(self.wordhoard.imperative)
-        return "    --" + ", ".join(self.wordhoard.imperative[:3]) + " " +\
+        random.shuffle(self.wordhoard['imperative'])
+        return "    --" + ", ".join(self.wordhoard['imperative'][:3]) + " " +\
                self.make_prepositional_phrase()
 
     def __str__(self):
@@ -65,6 +65,6 @@ class Pastoral:
 
 
 if __name__ == "__main__":
-    p = Pastoral(Wordhoard("pastoral.json"))
+    p = Pastoral(json.loads(open("resources/pastoral.json").read()))
     for i in range(random.randint(2, 4)):
         print(p)
