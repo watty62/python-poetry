@@ -50,21 +50,20 @@ class Pastoral:
 
     def you(self): return "You " + random.choice(self.wordhoard['intransitive'])
 
-    def subject_verb_object(self, a, b):
+    def subject_verb_object(self, subjects, objects):
         is_singular = randbool()
         return " ".join([
-            self.choose_subject(self.wordhoard[a], is_singular),
+            self.choose_subject(self.wordhoard[subjects], is_singular),
             self.choose_verb(self.wordhoard['transitive'], is_singular),
-            self.choose_object(self.wordhoard[b])])
+            self.choose_object(self.wordhoard[objects])])
 
     def interlude(self):
-        random.shuffle(self.wordhoard['imperative'])
-        return "    --" + ", ".join(self.wordhoard['imperative'][:3]) + " " +\
+        return "    --" + ", ".join(random.sample(self.wordhoard['imperative'], 3)) + " " +\
                self.make_prepositional_phrase()
 
     def __str__(self):
-        return self.you() + '\n' + self.subject_verb_object('sights', 'sounds') + '\n' +\
-               self.subject_verb_object('sights', 'sounds') + '\n' +\
-               self.subject_verb_object('sights', 'sounds') + '\n' +\
-               (self.interlude() + '\n' if random.randint(1, 3) == 1 else "")
+        stanza = [self.you()]
+        stanza.extend(map(lambda i: self.subject_verb_object('sights', 'sounds'), range(3)))
+        if random.randint(1, 3) == 1: stanza.append(self.interlude())
+        return '\n'.join(stanza) + '\n'
 
