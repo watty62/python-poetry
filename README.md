@@ -6,21 +6,28 @@ Nick Montfort (@nickmontfort). More robust things will come, surely.
 ## Running
 python test.py
 
-## Sample Pastoral
+## Sample "Pastoral"
 
-    You weep
-    Your warm squirrel unveils the rumble
-    A rake orders his flip-flap
-    Your rake delves whirrings under a creek
+    You listen
+    The tree rakes her farmhouse
+    Bales eek clickety-clackings toward stars
+    Gray rabbits unveil barns
+        --thirst, fight, rage over your crackling
 
-    You reel
-    Ladders make clickety-clacks with a cloud
-    The tree moves rumbles with my cow
-    A cat quells your crackle
-        --scream, bite, hunger for a seed
+    You jump
+    Her barn rakes ladders
+    The tractor answers this wet moonset nest
+    The sunrise river makes this wet bubbling for maples
+        --thirst, bite, scream over the gray snapping
 
-    You stop
-    A dim creek ruins the flip-flap
-    A cool barn harrows her bleat
-    A dry squirrel unveils rumbles for a rabbit
-        --bite, seek, scream under his rabbit
+    You halt
+    The straight nest moves lightnings
+    Her rabbit orders this white whirring over walnuts
+    Moonrise fireflies light creakings for rivers
+        --hunger, rage, strive with crunchings
+
+    You listen
+    Moonrise moons throw this young green seed
+    That moonrise black oak orders twigs
+    This warm wet ladder ruins thunderings under kudzus
+        --will, scream, fight over thunderings
