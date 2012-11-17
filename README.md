@@ -8,13 +8,19 @@ python test.py
 
 ## Sample Pastoral
 
-    You halt
-    A wet bale kicks whisperings into a nest
-    Cows unveil his clickety-clacking
-    My horse quells crunchings under a dog
+    You weep
+    Your warm squirrel unveils the rumble
+    A rake orders his flip-flap
+    Your rake delves whirrings under a creek
 
-    You breathe
-    Wrought windmills forget a clip-clopping
-    Wrought dogs illumine whirrings for her cabin
-    Blue beaver dams take liltings for a hand
-        --hunger, strive, thirst toward a bale
+    You reel
+    Ladders make clickety-clacks with a cloud
+    The tree moves rumbles with my cow
+    A cat quells your crackle
+        --scream, bite, hunger for a seed
+
+    You stop
+    A dim creek ruins the flip-flap
+    A cool barn harrows her bleat
+    A dry squirrel unveils rumbles for a rabbit
+        --bite, seek, scream under his rabbit
