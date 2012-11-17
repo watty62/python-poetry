@@ -7,41 +7,46 @@ __email__ = 'dalan.hurst@gmail.com'
 __copyright__ = "Copyright 2012"
 __license__ = "BSD"
 
-import json
 import random
 import re
+from poetry.util.pluralizer import pluralize
 
 def randbool(): return random.randint(0, 1) == 0
 
-
-def uppercase_first(str): return str[0].upper() + str[1:]
-
-
 class Pastoral:
-    def __init__(self, wordhoard: dict):
+    def __init__(self, wordhoard):
         self.wordhoard = wordhoard
 
-    def pluralize(self, noun):
-        return noun + "s"
+    def maybe_describe(self, noun):
+        return self.describe(noun) if randbool() else noun
 
-    def articulate(self, noun):
-        return "the " + noun\
-            if randbool() else "a " + noun\
-                if re.search('^[^aeiou]', noun) else "an " + noun
+    def maybe_define(self, noun):
+        return self.define(noun) if randbool() else self.indefine(noun)
+
+    def describe(self, noun):
+        return random.choice(self.wordhoard['adjectives']) + " " + noun
+
+    # Use definite article or possessive pronoun
+    def define(self, noun):
+        return random.choice(["the", "my", "your", "his", "her"]) + " " + noun
+
+    # use indefinite article
+    def indefine(self, noun):
+        return "a " + noun if re.search('^[^aeiou]', noun) else "an " + noun
 
     def choose_subject(self, nouns, is_singular):
-        return uppercase_first(self.articulate(random.choice(nouns)))\
-            if is_singular else uppercase_first(self.pluralize(random.choice(nouns)))
+        return (self.maybe_define(self.maybe_describe(random.choice(nouns)))\
+            if is_singular else pluralize(self.maybe_describe(random.choice(nouns)))).capitalize()
 
     def choose_object(self, nouns):
-        return self.articulate(random.choice(nouns))\
-            if randbool() else self.pluralize(random.choice(nouns)) + " " + self.make_prepositional_phrase()
+        return self.maybe_define(random.choice(nouns))\
+            if randbool() else pluralize(random.choice(nouns)) + " " + self.make_prepositional_phrase()
 
     def make_prepositional_phrase(self):
-        return random.choice(self.wordhoard['prepositions']) + " " + self.articulate(random.choice(self.wordhoard['sights']))
+        return random.choice(self.wordhoard['prepositions']) + " " + self.maybe_define(random.choice(self.wordhoard['sights']))
 
     def choose_verb(self, verbs, is_singular):
-        return random.choice(verbs) + "s" if is_singular else random.choice(verbs)
+        return pluralize(random.choice(verbs)) if is_singular else random.choice(verbs)
 
     def you(self): return "You " + random.choice(self.wordhoard['intransitive'])
 
@@ -63,8 +68,3 @@ class Pastoral:
                self.subject_verb_object('sights', 'sounds') + '\n' +\
                (self.interlude() + '\n' if random.randint(1, 3) == 1 else "")
 
-
-if __name__ == "__main__":
-    p = Pastoral(json.loads(open("resources/pastoral.json").read()))
-    for i in range(random.randint(2, 4)):
-        print(p)

@@ -8,5 +8,6 @@
     "intransitive": ["stop", "halt", "weep", "breathe", "reel"],
     "transitive": ["move", "show", "ruin", "make", "throw", "pull", "quell", "wake", "eek", "rake", "take", "unveil",
         "illumine", "order", "pipe", "answer", "delve", "forget", "gurgle", "harrow", "kick", "light", "coronate"],
-    "imperative": ["fight", "seek", "strive", "thirst", "hunger", "bite", "scream", "quake", "will", "rage"]
+    "imperative": ["fight", "seek", "strive", "thirst", "hunger", "bite", "scream", "quake", "will", "rage"],
+    "adjectives": ["red", "orange", "yellow", "green", "blue", "indigo", "violet", "hot", "cold", "wet", "bent", "wrought"]
 }
