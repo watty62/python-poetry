@@ -1,6 +1,6 @@
 # python-poetry - A naive poetry generator library for Python 2.x
 
-Currently I've only implemented a generator which uses a static dictionary, based loosely on Taroko Gorge by
+Currently I've only implemented a generator which uses a static dictionary, based loosely on "Taroko Gorge" by
 Nick Montfort (@nickmontfort). More robust things will come, surely.
 
 ## Running

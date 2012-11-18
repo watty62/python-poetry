@@ -1,6 +1,6 @@
 """
-    Smarter pluralization
-    mostly from Dive into Python by Mark Pilgrim
+    Smarter English pluralization
+    mostly from "Dive into Python" by Mark Pilgrim
 """
 
 __author__ = 'Doug Hurst'
@@ -10,13 +10,16 @@ __license__ = "BSD"
 
 import re
 
-def pluralization_rules(language):
-    with open('resources/pluralization_rules.%s.csv' % language, 'r') as file:
-        for line in file:
-            pattern, search, replace = line.split()
-            yield lambda word: re.search(pattern, word) and re.sub(search, replace, word)
+def pluralization_rules():
+    rules = (
+        ("[sxz]$", "$", "es"),
+        ("[^aeioudgkprt]h$", "$", "es"),
+        ("[^aeiou]y$", "y$", "ies"),
+        ("$", "$", "s"))
+    for pattern, search, replace in rules:
+        yield lambda word: re.search(pattern, word) and re.sub(search, replace, word)
 
-def pluralize(noun, language = 'en'):
-    for applyRule in pluralization_rules(language):
+def pluralize(noun):
+    for applyRule in pluralization_rules():
         result = applyRule(noun)
         if result: return result

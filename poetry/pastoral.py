@@ -44,12 +44,13 @@ class Pastoral:
         return ("the" if randbool() else "a" if re.search('^[^aeiou]', noun) else "an") + " " + noun
 
     def choose_subject(self, nouns, is_singular):
-        return (self.determine(self.maybe_describe(random.choice(nouns)))\
-            if is_singular else pluralize(self.maybe_describe(random.choice(nouns)))).capitalize()
+        return (self.determine(self.maybe_describe(random.choice(nouns)))
+                if is_singular
+                else pluralize(self.maybe_describe(random.choice(nouns)))).capitalize()
 
     def choose_object(self, nouns):
-        return self.determine(self.maybe_describe(random.choice(nouns)))\
-            if randbool() else pluralize(random.choice(nouns))
+        return (self.determine(self.maybe_describe(random.choice(nouns)))
+                if randbool() else pluralize(random.choice(nouns)))
 
     def choose_verb(self, verbs, is_singular):
         return pluralize(random.choice(verbs)) if is_singular else random.choice(verbs)
@@ -64,15 +65,14 @@ class Pastoral:
         return " ".join([
             self.choose_subject(self.wordhoard['sights'], is_singular),
             self.choose_verb(self.wordhoard['transitives'], is_singular),
-            self.choose_object(self.wordhoard['sights'])\
+            self.choose_object(self.wordhoard['sights'])
                 if randbool()
-                else (self.choose_object(self.wordhoard['sounds']) + " " +\
-                      self.make_prepositional_phrase('sights'))
+                else (self.choose_object(self.wordhoard['sounds']) + " " + self.make_prepositional_phrase('sights'))
         ])
 
     def interlude(self):
-        return "    --" + ", ".join(random.sample(self.wordhoard['imperatives'], 3)) + " " +\
-               self.make_prepositional_phrase('sounds')
+        return ("    --" + ", ".join(random.sample(self.wordhoard['imperatives'], 3))
+                + " " + self.make_prepositional_phrase('sounds'))
 
     def __str__(self):
         stanza = [self.you()]
