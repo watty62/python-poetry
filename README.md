@@ -9,7 +9,7 @@ Nick Montfort (@nickmontfort). More robust things will come, surely.
     >>> import random
     >>> from poetry.pastoral import Pastoral
     >>> p = Pastoral(json.loads(open("resources/pastoral.json").read()))
-    >>> for i in range(random.randint(2, 4)): print(p)
+    >>> for stanza in p.get_stanzas(): print(stanza)
 
 ## Sample "Pastoral"
 
