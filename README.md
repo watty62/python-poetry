@@ -13,26 +13,22 @@ Nick Montfort (@nickmontfort). More robust things will come, surely.
 
 ## Sample "Pastoral"
 
-    You listen
-    The tree rakes her farmhouse
-    Bales eek clickety-clackings toward stars
-    Gray rabbits unveil barns
-        --thirst, fight, rage over your crackling
-
-    You jump
-    Her barn rakes ladders
-    The tractor answers this wet moonset nest
-    The sunrise river makes this wet bubbling for maples
-        --thirst, bite, scream over the gray snapping
-
     You halt
-    The straight nest moves lightnings
-    Her rabbit orders this white whirring over walnuts
-    Moonrise fireflies light creakings for rivers
-        --hunger, rage, strive with crunchings
+    Your gray harvest answers snappings toward that warm crop
+    His kudzu moves hands
+    This gray wet twig pulls oaks
+
+    Fields illumine my oak
+    Your bird quells my indigo grass
+    My tractor quells mewlings with his wet maple
+
+    His indigo grass gurgles barkings with crops
+    This curved moon throws a curved grass
+    Red seeds move that wet rabbit
+
+    This moonrise red tractor quells maples
+    Lightnings answer tractors
+    Orange tractors quell his orange rumbling toward rabbits
+        --quake, thirst, will toward cracklings and then
 
     You listen
-    Moonrise moons throw this young green seed
-    That moonrise black oak orders twigs
-    This warm wet ladder ruins thunderings under kudzus
-        --will, scream, fight over thunderings

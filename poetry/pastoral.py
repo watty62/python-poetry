@@ -16,6 +16,7 @@ def randbool(): return random.randint(0, 1) == 0
 class Pastoral:
     def __init__(self, wordhoard):
         self.wordhoard = wordhoard
+        self.themes = {}
 
     def maybe_describe(self, noun):
         return self.attribute(noun) if randbool() else noun
@@ -29,7 +30,10 @@ class Pastoral:
 
     # Use attributive adjective
     def attribute(self, noun):
-        return random.choice(self.wordhoard['adjectives']) + " " + noun
+        adjective = random.choice(self.wordhoard['adjectives'])
+        if adjective in self.themes: self.themes[adjective] += 1
+        else: self.themes[adjective] = 0
+        return adjective + " " + noun
 
     # Use demonstrative
     def demonstrate(self, noun):
@@ -53,7 +57,10 @@ class Pastoral:
                 if randbool() else pluralize(random.choice(nouns)))
 
     def choose_verb(self, verbs, is_singular):
-        return pluralize(random.choice(verbs)) if is_singular else random.choice(verbs)
+        verb = random.choice(verbs)
+        if verb in self.themes: self.themes[verb] += 1
+        else: self.themes[verb] = 0
+        return pluralize(verb) if is_singular else verb
 
     def make_prepositional_phrase(self, objects):
         return random.choice(self.wordhoard['prepositions']) + " " + self.choose_object(self.wordhoard[objects])
@@ -72,11 +79,16 @@ class Pastoral:
 
     def interlude(self):
         return ("    --" + ", ".join(random.sample(self.wordhoard['imperatives'], 3))
-                + " " + self.make_prepositional_phrase('sounds'))
+                + " " + self.make_prepositional_phrase('sounds')
+                + " and then \n\n" + self.you())
 
-    def __str__(self):
-        stanza = [self.you()]
-        stanza.extend(map(lambda i: self.subject_verb_object(), range(3)))
-        if random.randint(1, 3) == 1: stanza.append(self.interlude())
-        return '\n'.join(stanza) + '\n'
+    def get_stanzas(self):
+        while 3 not in self.themes.values():
+            if len(self.themes): stanza = []
+            else: stanza = [self.you()]
+            stanza.extend(map(lambda i: self.subject_verb_object(), range(3)))
+            if 3 in self.themes.values(): stanza.append(self.interlude())
+            else: stanza.append('')
+            yield '\n'.join(stanza)
+
 

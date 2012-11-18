@@ -1,16 +1,13 @@
 {
     "sights": ["cow", "cat", "dog", "tree", "field", "horse", "cabin", "farmhouse", "barn", "tractor", "hand", "cloud",
-        "rabbit", "truck", "creek", "river", "beaver dam", "stick", "twig", "bird", "nest", "shovel", "rake",
+        "rabbit", "creek", "river", "beaver dam", "stick", "twig", "bird", "nest", "shovel", "rake",
         "rope", "ladder", "bale", "windmill", "rabbit", "squirrel", "grass", "tree", "seed", "crop", "harvest", "boot",
         "sun", "moon", "star", "lightning", "firefly", "cicada", "grasshopper", "kudzu", "oak", "maple", "walnut"],
-    "sounds": ["mewling", "snapping", "clapping", "clip-clopping", "rumbling", "bubbling", "whirring", "bleating",
-        "lilting", "barking", "crunching", "creaking", "clickety-clacking", "popping", "crackling", "thundering"],
+    "sounds": ["mewling", "snapping", "clapping", "rumbling", "barking", "creaking", "crackling"],
     "prepositions": ["over", "under", "for", "with", "toward"],
     "intransitives": ["stop", "halt", "weep", "breathe", "reel", "listen", "crumble", "hesitate", "dance", "jump"],
-    "transitives": ["move", "show", "ruin", "make", "throw", "pull", "quell", "wake", "eek", "rake", "take", "unveil",
-        "illumine", "order", "pipe", "answer", "delve", "forget", "gurgle", "harrow", "kick", "light", "coronate"],
+    "transitives": ["move", "throw", "pull", "quell", "take", "unveil", "illumine", "answer", "gurgle", "coronate"],
     "imperatives": ["fight", "seek", "strive", "thirst", "hunger", "bite", "scream", "quake", "will", "rage"],
-    "adjectives": ["red", "orange", "yellow", "green", "blue", "indigo", "violet", "warm", "cool", "wet", "dry", "bent",
-        "wrought", "curved", "straight", "black", "white", "gray", "bright", "dim", "sunset", "sunrise", "moonset",
-        "moonrise", "starshine", "old", "young"]
+    "adjectives": ["red", "orange", "yellow", "indigo", "violet", "warm", "cool", "wet", "curved", "gray", "moonset",
+        "moonrise", "starshine"]
 }
