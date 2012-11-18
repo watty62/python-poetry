@@ -1,4 +1,5 @@
-# python-poetry - A naive poetry generator library for Python 2.x
+# python-poetry - A naive poetry generator library for Python 2.6+
+[![Build Status](https://secure.travis-ci.org/dalanhurst/python-poetry.png)](http://travis-ci.org/dalanhurst/python-poetry)
 
 Currently I've only implemented a generator which uses a static dictionary, based loosely on "Taroko Gorge" by
 Nick Montfort (@nickmontfort). More robust things will come, surely.
