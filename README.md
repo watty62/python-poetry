@@ -5,7 +5,11 @@ Currently I've only implemented a generator which uses a static dictionary, base
 Nick Montfort (@nickmontfort). More robust things will come, surely.
 
 ## Running
-python test.py
+    >>> import json
+    >>> import random
+    >>> from poetry.pastoral import Pastoral
+    >>> p = Pastoral(json.loads(open("resources/pastoral.json").read()))
+    >>> for i in range(random.randint(2, 4)): print(p)
 
 ## Sample "Pastoral"
 
