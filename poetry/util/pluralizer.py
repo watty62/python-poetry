@@ -53,5 +53,5 @@ def pluralize(word):
 
     """
     for applyRule in pluralization_rules():
-        result = applyRule(noun)
+        result = applyRule(word)
         if result: return result
