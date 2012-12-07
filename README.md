@@ -7,9 +7,9 @@ things will come, surely.
 
 ## Running
     >>> import json
-    >>> import random
-    >>> from poetry.pastoral import Pastoral
-    >>> p = Pastoral(json.loads(open("resources/pastoral.json").read()))
+    >>> from poetry.pastoral import *
+    >>> from poetry.util.chooser import *
+    >>> p = Pastoral(RandomChooser(), json.loads(open("resources/pastoral.json").read()))
     >>> for stanza in p.get_stanzas(): print(stanza)
 
 ## Sample "Pastoral"
