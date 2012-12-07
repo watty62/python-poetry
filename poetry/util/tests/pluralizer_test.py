@@ -3,7 +3,7 @@ __email__ = 'dalan.hurst@gmail.com'
 __copyright__ = "Copyright 2012"
 __license__ = "BSD"
 
-from poetry.util.pluralizer import pluralize
+from poetry.util.pluralizer import *
 
 def test_pluralization_sibilant():
     assert pluralize("kiss") == "kisses"
@@ -13,6 +13,7 @@ def test_pluralization_sibilant():
     assert pluralize("witch") == "witches"
     assert pluralize("judge") == "judges"
 
+
 def test_pluralization_voiceless_consonant():
     assert pluralize("lap") == "laps"
     assert pluralize("cat") == "cats"
@@ -20,15 +21,18 @@ def test_pluralization_voiceless_consonant():
     assert pluralize("cuff") == "cuffs"
     assert pluralize("death") == "deaths"
 
+
 def test_pluralization_normal():
     assert pluralize("boy") == "boys"
     assert pluralize("girl") == "girls"
     assert pluralize("chair") == "chairs"
 
+
 def test_pluralization_nouns_in_o():
     assert pluralize("hero") == "heroes"
     assert pluralize("potato") == "potatoes"
     assert pluralize("volcano") == "volcanos"
+
 
 def test_pluralization_nouns_in_o_latin_origin():
     assert pluralize("canto") == "cantos"
@@ -41,11 +45,13 @@ def test_pluralization_nouns_in_o_latin_origin():
     assert pluralize("quarto") == "quartos"
     assert pluralize("kimono") == "kimonos"
 
+
 def test_pluralization_nouns_in_y():
     assert pluralize("cherry") == "cherries"
     assert pluralize("lady") == "ladies"
     assert pluralize("day") == "days"
     assert pluralize("monkey") == "monkeys"
+
 
 def test_pluralization_near_regular():
     assert pluralize("bath") == "baths"
@@ -57,6 +63,7 @@ def test_pluralization_near_regular():
     assert pluralize("house") == "houses"
     assert pluralize("moth") == "moths"
     assert pluralize("proof") == "proofs"
+
 
 def test_pluralization_identities():
     assert pluralize("bison") == "bison"
@@ -70,6 +77,7 @@ def test_pluralization_identities():
     assert pluralize("trout") == "trout"
     assert pluralize("swine") == "swine"
     assert pluralize("plankton") == "plankton"
+
 
 def test_pluralization_ablaut():
     assert pluralize("foot") == "feet"

@@ -7,6 +7,7 @@ __author__ = 'Doug Hurst'
 __email__ = 'dalan.hurst@gmail.com'
 __copyright__ = "Copyright 2012"
 __license__ = "BSD"
+__all__ = ['pluralize']
 
 import re
 
@@ -15,7 +16,7 @@ def pluralization_rules():
         ("^bison$", ".*", "bison"),
         ("^buffalo$", ".*", "buffalo"),
         ("^deer$", ".*", "deer"),
-        ("^fish$", ".*",  "fish"),
+        ("^fish$", ".*", "fish"),
         ("^moose$", ".*", "moose"),
         ("^pike$", ".*", "pike"),
         ("^sheep$", ".*", "sheep"),
@@ -23,16 +24,16 @@ def pluralization_rules():
         ("^trout$", ".*", "trout"),
         ("^swine$", ".*", "swine"),
         ("^plankton$", ".*", "plankton"),
-        ("^foot$", ".*",  "feet"),
-        ("^goose$", ".*",  "geese"),
-        ("^louse$", ".*",  "lice"),
-        ("^man$", ".*",  "men"),
-        ("^mouse$", ".*",  "mice"),
-        ("^tooth$", ".*",  "teeth"),
-        ("^woman$", ".*",  "women"),
-        ("^proof", ".*",  "proofs"),
-        ("^hero", ".*",  "heroes"),
-        ("^potato", ".*",  "potatoes"),
+        ("^foot$", ".*", "feet"),
+        ("^goose$", ".*", "geese"),
+        ("^louse$", ".*", "lice"),
+        ("^man$", ".*", "men"),
+        ("^mouse$", ".*", "mice"),
+        ("^tooth$", ".*", "teeth"),
+        ("^woman$", ".*", "women"),
+        ("^proof", ".*", "proofs"),
+        ("^hero", ".*", "heroes"),
+        ("^potato", ".*", "potatoes"),
         ("[^f]fe?$", ".e?$", "ves"),
         ("[sxz]$", "$", "es"),
         ("[^aeioudgkprt]h$", "$", "es"),
@@ -40,6 +41,7 @@ def pluralization_rules():
         ("$", "$", "s"))
     for pattern, search, replace in rules:
         yield lambda word: re.search(pattern, word) and re.sub(search, replace, word)
+
 
 def pluralize(noun):
     for applyRule in pluralization_rules():
