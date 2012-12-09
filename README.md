@@ -5,12 +5,15 @@ Currently I've only implemented a generator which uses a static dictionary,
 based loosely on "Taroko Gorge" by Nick Montfort (@nickmontfort). More robust
 things will come, surely.
 
-## Running
+## Running "Pastoral" (with random chooser)
     >>> import json
     >>> from poetry.pastoral import *
     >>> from poetry.util.chooser import *
     >>> p = Pastoral(RandomChooser(), json.loads(open("resources/pastoral.json").read()))
     >>> for stanza in p.get_stanzas(): print(stanza)
+
+## Running "Pastoral" (with exhaustive chooser)
+    >>> p = Pastoral(ExhaustiveChooser(), json.loads(open("resources/pastoral.json").read()))
 
 ## Sample "Pastoral"
 
