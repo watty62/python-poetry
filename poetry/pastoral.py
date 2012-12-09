@@ -172,8 +172,8 @@ class Pastoral(object):
         the repetition of a verb or noun phrase three times.
         """
         while 3 not in self.themes.values():
-            if len(self.themes) == 0: stanza = []
-            else: stanza = [self._you()]
+            if len(self.themes) == 0: stanza = [self._you()]
+            else: stanza = []
 
             stanza.extend(map(lambda i: self._subject_verb_object(), range(3)))
 
