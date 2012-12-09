@@ -1,7 +1,7 @@
 # coding: utf-8
 """
-    Smarter English pluralization
-    mostly from "Dive into Python" by Mark Pilgrim
+    Collection of classes which use different strategies to choose words from a
+    dictionary.
 """
 
 __author__ = 'Doug Hurst'
