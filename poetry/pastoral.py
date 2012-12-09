@@ -13,7 +13,7 @@ import re
 from poetry.util.pluralizer import pluralize
 
 
-class Pastoral:
+class Pastoral(object):
     def __init__(self, chooser, wordhoard):
         self.chooser = chooser
         self.wordhoard = wordhoard

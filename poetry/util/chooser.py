@@ -13,7 +13,7 @@ __all__ = ['RandomChooser']
 import random
 
 
-class RandomChooser:
+class RandomChooser(object):
     def bool(self):
         return random.randint(0, 1) == 0
 
