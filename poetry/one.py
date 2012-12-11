@@ -7,13 +7,13 @@ __author__ = 'Doug Hurst'
 __email__ = 'dalan.hurst@gmail.com'
 __copyright__ = "Copyright 2012"
 __license__ = "BSD"
-__all__ = ['Pastoral']
+__all__ = ['One']
 
 import re
 from poetry.util.pluralizer import pluralize
 
 
-class Pastoral(object):
+class One(object):
     def __init__(self, chooser, wordhoard):
         self.chooser = chooser
         self.wordhoard = wordhoard
