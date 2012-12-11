@@ -185,7 +185,7 @@ class One(object):
             yield stanza
 
     def render(self, template):
-        return template.render(title = "One", poem = self._get_stanzas())
+        return template.render(title = None, poem = self._get_stanzas())
 
     def __str__(self):
         return reduce(lambda i,x: i + '\n'.join(x) + '\n\n', self._get_stanzas(), "")

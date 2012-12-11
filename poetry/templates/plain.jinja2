@@ -1,4 +1,6 @@
-{{ title }}
-{% for stanza in poem %}{% for line in stanza %}
-{{ line }}{% endfor %}
+{%- if not title is none %}{{ title }}{% endif %}
+{%- for stanza in poem %}
+    {%- for line in stanza %}
+    {{ line }}
+    {%- endfor %}
 {% endfor %}

@@ -1,7 +1,7 @@
 # coding: utf-8
 """
     Collection of classes which use different strategies to choose words from a
-    dictionary.
+    list.
 """
 
 __author__ = 'Doug Hurst'
