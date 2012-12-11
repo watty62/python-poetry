@@ -17,9 +17,10 @@ from poetry.util.pluralizer import pluralize
 
 
 class One(object):
-    def __init__(self, chooser, wordhoard):
+    def __init__(self, title, chooser, wordhoard):
         self.chooser = chooser
         self.themes = {}
+        self.title = title
         self.wordhoard = wordhoard
 
     def _maybe_describe(self, noun):
@@ -185,8 +186,8 @@ class One(object):
             yield stanza
 
     def render(self, template):
-        return template.render(title = None, poem = self._get_stanzas())
+        return template.render(title = self.title, poem = self._get_stanzas())
 
     def __str__(self):
-        return reduce(lambda i,x: i + '\n'.join(x) + '\n\n', self._get_stanzas(), "")
+        return reduce(lambda i,x: i + '\n'.join(x) + '\n\n', self._get_stanzas(), self.title + '\n\n')
 
