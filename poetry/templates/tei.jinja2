@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<text xmlns="http://www.tei-c.org/ns/1.0">
+    <body type="poem">
+        <head>{{ title }}</head>
+        {% for stanza in poem %}
+        <lg type="stanza">
+            {% for line in stanza %}
+                <l>{{ line }}</l>
+            {% endfor %}
+        </lg>
+        {% endfor %}
+    </body>
+</text>

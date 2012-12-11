@@ -1,6 +1,9 @@
 # coding: utf-8
 """
-    Pastoral - A naïve Python poetry generator
+    One - A naïve Python poetry generator
+
+    Losely based on "Taroko Gorge" by Nick Montfort
+    http://nickm.com/poems/taroko_gorge.html
 """
 
 __author__ = 'Doug Hurst'
@@ -16,8 +19,8 @@ from poetry.util.pluralizer import pluralize
 class One(object):
     def __init__(self, chooser, wordhoard):
         self.chooser = chooser
-        self.wordhoard = wordhoard
         self.themes = {}
+        self.wordhoard = wordhoard
 
     def _maybe_describe(self, noun):
         """Does a coin-flip, uses an (attributive) adjective if true.
@@ -164,9 +167,9 @@ class One(object):
         """
         return ("    --" + ", ".join(self.chooser.sample(self.wordhoard['imperatives'], 3))
                 + " " + self._make_prepositional_phrase(self.wordhoard['sounds'])
-                + " and then\n\n" + self._you())
+                + " and then")
 
-    def get_stanzas(self):
+    def _get_stanzas(self):
         """
         Yields stanzas until a 'theme' occurs. Currently a theme is defined as
         the repetition of a verb or noun phrase three times.
@@ -177,9 +180,13 @@ class One(object):
 
             stanza.extend(map(lambda i: self._subject_verb_object(), range(3)))
 
-            if 3 in self.themes.values(): stanza.append(self._interlude())
-            else: stanza.append('')
+            if 3 in self.themes.values(): stanza.extend([self._interlude(), '', self._you()])
 
-            yield '\n'.join(stanza)
+            yield stanza
 
+    def render(self, template):
+        return template.render(title = "One", poem = self._get_stanzas())
+
+    def __str__(self):
+        return reduce(lambda i,x: i + '\n'.join(x) + '\n\n', self._get_stanzas(), "")
 

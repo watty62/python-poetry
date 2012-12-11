@@ -1,4 +1,4 @@
-# python-poetry - A naïve poetry generator library for Python 2.6+
+# python-poetry - Naïve poetry generators for Python 2.6+
 [![Build Status](https://secure.travis-ci.org/dalanhurst/python-poetry.png)](http://travis-ci.org/dalanhurst/python-poetry)
 
 Currently I've only implemented a generator which uses a static dictionary,
@@ -9,8 +9,8 @@ things will come, surely.
     >>> import json
     >>> from poetry.one import *
     >>> from poetry.util.chooser import *
-    >>> p = One(RandomChooser(), json.loads(open("resources/pastoral.json").read()))
-    >>> for stanza in p.get_stanzas(): print(stanza)
+    >>> poem = One(RandomChooser(), json.loads(open("resources/pastoral.json").read()))
+    >>> print(poem)
 
 ## Running "One" (with exhaustive chooser)
     >>> p = One(ExhaustiveChooser(), json.loads(open("resources/pastoral.json").read()))

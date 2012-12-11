@@ -138,6 +138,6 @@ def test_one_subject_verb_object():
 
 def test_one_interlude():
     one = One(MockChooserA(), wordhoard)
-    assert one._interlude() == '    --fight on the big crack and then\n\nYou succeed'
+    assert one._interlude() == '    --fight on the big crack and then'
     one = One(MockChooserB(), wordhoard)
-    assert one._interlude() == '    --fight on cracks and then\n\nYou succeed'
+    assert one._interlude() == '    --fight on cracks and then'
