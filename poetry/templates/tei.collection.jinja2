@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>{{ title }}</title>
+                <author>{{ author }}</author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>python-poetry</publisher>
+                <pubPlace>https://github.com/dalanhurst/python-poetry</pubPlace>
+            </publicationStmt>
+            <sourceDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+        {% for poem in poems %}
+            {{ poem.render(partial) }}
+            <pb/>
+        {% endfor %}
+        </body>
+    </text>
+</TEI>

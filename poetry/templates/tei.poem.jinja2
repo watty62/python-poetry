@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<div1 xmlns="http://www.tei-c.org/ns/1.0" type="poem">
+<div xmlns="http://www.tei-c.org/ns/1.0" type="poem">
     {% if not title is none %}<head>{{ title }}</head>{% endif %}
     {%- for stanza in poem %}
     <lg type="stanza">
@@ -8,4 +7,4 @@
         {%- endfor %}
     </lg>
     {%- endfor %}
-</div1>
+</div>

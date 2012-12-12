@@ -7,13 +7,15 @@ things will come, surely.
 
 ## Running "One" (with random chooser)
     >>> import json
+    >>> from jinja2 import Environment, PackageLoader
     >>> from poetry.one import *
     >>> from poetry.util.chooser import *
+    >>> env = Environment(loader=PackageLoader('poetry', 'templates'))
     >>> poem = One(RandomChooser(), json.loads(open("resources/pastoral.json").read()))
-    >>> print(poem)
+    >>> print(poem.render(env.get_template('plain.jinja2')))
 
 ## Running "One" (with exhaustive chooser)
-    >>> p = One(ExhaustiveChooser(), json.loads(open("resources/pastoral.json").read()))
+    >>> poem = One(ExhaustiveChooser(), json.loads(open("resources/pastoral.json").read()))
 
 ## Sample "One"
 

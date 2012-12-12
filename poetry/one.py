@@ -17,10 +17,10 @@ from poetry.util.pluralizer import pluralize
 
 
 class One(object):
-    def __init__(self, title, chooser, wordhoard):
+    def __init__(self, chooser, wordhoard):
         self.chooser = chooser
         self.themes = {}
-        self.title = title
+        self.title = None
         self.wordhoard = wordhoard
 
     def _maybe_describe(self, noun):
@@ -170,24 +170,25 @@ class One(object):
                 + " " + self._make_prepositional_phrase(self.wordhoard['sounds'])
                 + " and then")
 
-    def _get_stanzas(self):
+    def _generate_stanzas(self):
         """
-        Yields stanzas until a 'theme' occurs. Currently a theme is defined as
-        the repetition of a verb or noun phrase three times.
+        Generates stanzas until a 'theme' occurs. Currently a theme is defined
+        as the repetition of a verb or noun phrase three times.
         """
+        yield [self._you()]
+
         while 3 not in self.themes.values():
-            if len(self.themes) == 0: stanza = [self._you()]
-            else: stanza = []
+            stanza = map(lambda i: self._subject_verb_object(), range(3))
 
-            stanza.extend(map(lambda i: self._subject_verb_object(), range(3)))
-
-            if 3 in self.themes.values(): stanza.extend([self._interlude(), '', self._you()])
+            if 3 in self.themes.values(): stanza.append(self._interlude())
 
             yield stanza
 
-    def render(self, template):
-        return template.render(title = self.title, poem = self._get_stanzas())
+        yield [self._you()]
 
-    def __str__(self):
-        return reduce(lambda i,x: i + '\n'.join(x) + '\n\n', self._get_stanzas(), self.title + '\n\n')
+    def render(self, template):
+        return template.render(
+            title = self.title,
+            poem = self._generate_stanzas()
+        )
 
