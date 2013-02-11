@@ -3,7 +3,7 @@ __email__ = 'dalan.hurst@gmail.com'
 __copyright__ = "Copyright 2012"
 __license__ = "BSD"
 
-from poetry.util.pluralizer import *
+from poetry.util.pluralizer import pluralize
 
 def test_pluralization_sibilant():
     assert pluralize("kiss") == "kisses"

@@ -1,0 +1,21 @@
+{
+    "sights": [
+        "gear", "machine", "engine", "steel", "forge", "fire", "iron", "tunnel",
+        "cable", "mine", "train", "highway", "arm", "gaslight", "rivet", "boot",
+        "hook", "sweat", "brow", "coal", "smoke", "wrench", "scaffold", "track",
+        "steam", "knuckle", "bulb", "socket", "lever", "rope", "city", "cement",
+        "copper", "concrete", "bearing", "anvil", "motor", "piston", "industry",
+        "rotor", "wire", "brick"],
+    "sounds": ["ringing", "grinding", "clapping", "rumbling", "crashing"],
+    "prepositions": ["over", "under", "for", "with", "toward", "in", "on", "to"],
+    "intransitives": ["hammer", "churn", "shatter", "turn", "howl", "collapse"],
+    "transitives": [
+        "lash", "press", "move", "throw", "pull", "rip", "chew", "take", "rake",
+        "dig", "pour", "mold", "harness", "consume", "remand", "build", "burn"],
+    "imperatives": [
+        "fight", "seek", "strive", "thirst", "hunger", "rage", "scream", "yell",
+        "quake", "will", "rake", "curse", "blast", "burn", "decimate", "reign"],
+    "adjectives": [
+        "gray", "orange", "yellow", "calibrated", "wrought", "violet", "molten",
+        "red", "engineered", "brass", "pneumatic", "warm", "cool", "wet", "hot"]
+}

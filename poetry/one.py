@@ -116,7 +116,7 @@ class One(object):
         """
         return (self._determine(self._maybe_describe(self.chooser.choose(nouns)))
                 if is_singular
-                else pluralize(self._maybe_describe(self.chooser.choose(nouns)))).capitalize()
+                else pluralize(self._maybe_describe(self.chooser.choose(nouns))))
 
     def _choose_object(self, nouns):
         """Chooses a single noun from a list and optionally describes it.
@@ -170,7 +170,7 @@ class One(object):
                 + " " + self._make_prepositional_phrase(self.wordhoard['sounds'])
                 + " and then")
 
-    def _generate_stanzas(self):
+    def generate_stanzas(self):
         """
         Generates stanzas until a 'theme' occurs. Currently a theme is defined
         as the repetition of a verb or noun phrase three times.
@@ -178,17 +178,14 @@ class One(object):
         yield [self._you()]
 
         while 3 not in self.themes.values():
-            stanza = map(lambda i: self._subject_verb_object(), range(3))
+            stanza = map(
+                lambda i: self._subject_verb_object().capitalize() + ".",
+                range(3))
 
-            if 3 in self.themes.values(): stanza.append(self._interlude())
+            if 3 in self.themes.values():
+                stanza.append(self._interlude().capitalize())
 
             yield stanza
 
+        self.themes = {}
         yield [self._you()]
-
-    def render(self, template):
-        return template.render(
-            title = self.title,
-            poem = self._generate_stanzas()
-        )
-

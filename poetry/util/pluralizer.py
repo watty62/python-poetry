@@ -40,6 +40,10 @@ def pluralization_rules():
         ("[sxz]$", "$", "es"),
         ("[^aeioudgkprt]h$", "$", "es"),
         ("[^aeiou]y$", "y$", "ies"),
+        ("^smoke", ".*", "smoke"),
+        ("^steel", ".*", "steel"),
+        ("^sweat", ".*", "sweat"),
+        ("^tongs", ".*", "tongs"),
         ("$", "$", "s"))
     for pattern, search, replace in rules:
         yield lambda word: re.search(pattern, word) and re.sub(search, replace, word)

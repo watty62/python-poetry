@@ -1,0 +1,17 @@
+{
+    "sights": [
+        "galaxy", "star", "planet", "nebula", "quasar", "singularity", "rocket",
+        "asteroid", "moon", "plasma", "satellite", "comet", "astronaut", "ship",
+        "cosmonaut", "station", "colony"],
+    "sounds": ["silence"],
+    "prepositions": ["over", "under", "for", "with", "toward", "in", "on", "to"],
+    "intransitives": ["revolve", "spin", "pulse"],
+    "transitives": ["orbit", "develop", "escape", "explore", "crowd", "radiate",
+        "push", "pull", "build"],
+    "imperatives": ["explore", "strive", "seek", "find", "thrive", "push", "go",
+        "dream", "fly", "act"],
+    "adjectives": [
+        "red", "orange", "yellow", "green", "blue", "indigo", "violet", "white",
+        "gray", "black", "cloudy", "galactic", "interstellar", "interplanetary",
+        "rogue"]
+}

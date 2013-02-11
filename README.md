@@ -12,12 +12,12 @@ things will come, surely.
     >>> from poetry.util.chooser import *
     >>> env = Environment(loader=PackageLoader('poetry', 'templates'))
     >>> poem = One(RandomChooser(), json.loads(open("resources/pastoral.json").read()))
-    >>> print(poem.render(env.get_template('plain.jinja2')))
+    >>> print(template.render({'poem': poem.generate_stanzas(), 'title': None}))
 
 ## Running "One" (with exhaustive chooser)
     >>> poem = One(ExhaustiveChooser(), json.loads(open("resources/pastoral.json").read()))
 
-## Sample "One"
+## Sample "One" with "resources/pastoral.json"
 
     You halt
     Your gray harvest answers snappings toward that warm crop

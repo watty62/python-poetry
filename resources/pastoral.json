@@ -1,21 +1,21 @@
 {
     "sights": [
-        "cow", "cat", "dog", "tree", "field", "horse", "cabin", "farmhouse",
-        "barn", "tractor", "hand", "cloud", "rabbit", "creek", "river",
-        "beaver dam", "stick", "twig", "bird", "nest", "shovel", "rake", "rope",
-        "ladder", "bale", "windmill", "rabbit", "squirrel", "grass", "tree",
-        "seed", "crop", "harvest", "boot", "sun", "moon", "star", "lightning",
-        "firefly", "cicada", "grasshopper", "kudzu", "oak", "maple", "walnut"],
+        "cow", "cat", "dog", "hand", "tree", "field", "horse", "creek", "river",
+        "grass", "tractor", "stick", "squirrel", "rabbit", "cabin", "farmhouse",
+        "beaver dam", "harvest", "rabbit", "windmill", "shovel", "rake", "rope",
+        "barn", "bale", "sun", "bird", "twig", "nest", "cloud", "maple", "tree",
+        "ladder", "seed", "crop", "boot", "moon", "star", "walnut", "lightning",
+        "firefly", "cicada", "grasshopper", "kudzu", "oak"],
     "sounds": ["mewling", "snapping", "clapping", "rumbling", "creaking"],
     "prepositions": ["over", "under", "for", "with", "toward", "in", "on", "to"],
     "intransitives": ["halt", "weep", "reel", "crumble", "hesitate", "dance"],
     "transitives": [
-        "move", "throw", "pull", "quell", "take", "unveil", "answer", "gurgle",
-        "illumine", "coronate", "portend", "encourage", "consume", "repeal"],
+        "move", "throw", "pull", "quell", "take", "unveil", "consume", "answer",
+        "illumine", "coronate", "portend", "encourage", "gurgle", "repeal"],
     "imperatives": [
         "fight", "seek", "strive", "thirst", "hunger", "rage", "scream", "yell",
-        "quake", "will", "rage", "curse", "blast", "burn", "decimate", "sear"],
+        "quake", "will", "rake", "curse", "blast", "burn", "decimate", "sear"],
     "adjectives": [
-        "red", "orange", "yellow", "indigo", "violet", "warm", "cool", "wet",
-        "curved", "gray", "moonset", "moonrise", "starshine", "juniper-scented"]
+        "red", "curved", "orange", "yellow", "indigo", "violet", "warm", "cool",
+        "gray", "moon-set", "moonrise", "star-shine", "wet", "juniper-scented"]
 }
